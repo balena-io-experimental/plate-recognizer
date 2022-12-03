@@ -1,5 +1,22 @@
-version: "2"
-
+version: "2.1"
+volumes:
+    user-data:
+    api-data:
 services:
-  balena-project-template:
-    build: .
+  alpr:
+    build: ./platerec
+    restart: unless-stopped
+    privileged: true
+    volumes:
+       - 'user-data:/user-data'
+  plate-alert:
+    restart: always
+    privileged: true
+    build: ./plate-alert
+    expose:
+      - "5000"
+    volumes:
+      - "api-data:/data/api-data"
+      - 'user-data:/data/user-data'
+    labels:
+      io.balena.features.supervisor-api: '1'
