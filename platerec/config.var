@@ -1,0 +1,29 @@
+# This is an automatically generated version of the config file
+# Don't make changes to this file as they may be overwritten!
+
+# To edit this config file, set the balenaCloud dashboard variable USE_VARS to false or delete it
+# 
+
+# Line below is a flag to identify this generated file
+# f6e3a22d3c114d21a3c3k
+
+ztimezone
+
+[cameras]
+  zmmc
+
+  image_format = $(camera)_screenshots/%y-%m-%d/%H-%M-%S.%f.jpg
+
+  webhook_image_type = vehicle
+
+  zregions
+
+  [[camera-1]]
+    active = yes
+    zurl
+
+    csv_file = $(camera)_%y-%m-%d.csv
+
+    zwebhook_targets
+    zwebhook_image
+    zwebhook_header
