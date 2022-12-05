@@ -21,7 +21,7 @@ Running this project is as simple as deploying it to a balenaCloud application. 
 
 If you don't have one, you'll be prompted to set up a balenaCloud account (the first ten devices are free and full-featured!) then burn the downloaded image to a micro SD card, boot it up, and the ALPR application will download and start running. You will need to add some device variables to get it working - see "setup and confirguration" below.
 
-If you want to make cahnges to the project and push them to your device, you'll need to use the balenaCLI. See the [Getting Started](https://www.balena.io/os/docs/raspberrypi4-64/getting-started/) guide for more information.
+If you want to make changes to the project and push them to your device, you'll need to use the balena CLI. See the [Getting Started](https://www.balena.io/os/docs/raspberrypi4-64/getting-started/) guide for more information.
 
 ## Supported hardware
 
