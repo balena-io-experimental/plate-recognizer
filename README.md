@@ -45,15 +45,13 @@ The following Stream configuration parameters can be set in a similar way via th
 
 ** NOTE: For the above variables to take effect, you must set `USE_VARS` to the value `true` **
  
-If you want to use any parameters not listed above, or want to edit the config.ini file manually, make sure to set `USE_VARS` to false or delete the variable alltogether. If you edit the config.ini file while `USE_VARS` is `true` you will lose any changes to the file.
+If you want to use any parameters not listed above, or want to edit the config.ini file manually, make sure to set `USE_VARS` to false or delete the variable alltogether. If you edit the config.ini file while `USE_VARS` is `true` you will lose any changes to the file. The config.ini file is located at `/user-data/config.ini` and is on a persistent volume that will survive container restarts.
 
 Here's an example of some device variables in the dashboard:
 
 ![ALPR logs](https://github.com/balena-labs-projects/plate-recognizer/blob/main/images/device-variables.png)
 
 Note that you can set any variables at the fleet level in balenaCloud so they apply to all the devices in your fleet without having to edit each one separately! 
-
-The config.ini file is located at `/user-data/config.ini` and is on a persistent volume that will survive container restarts.
 
 If all is well, you should start seeing Stream data in the logs section of your balenaCloud dashboard:
 
