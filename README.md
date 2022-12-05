@@ -61,7 +61,7 @@ If all is well, you should start seeing Stream data in the logs section of your 
 
 We have included a service called plate-alert that consumes the Plate Recognizer Stream API on the device. To use it, add `http://plate-alert:5000` to your webhook_targets, either using a device variable or by editing config.ini as described above and in the [Stream documentation](https://guides.platerecognizer.com/docs/stream/configuration)
 
-The plate-alert service will let your device send you a text and close GPIO 20 (BCM numbering) when a plate on a custom list is detected. You can use the GPIO output to light an LED, close a relay, or some other type of signalling. To reset the GPIO to low, momentarily connect GPIO 26 to ground. (Such as with a momentary SPST pushbutton)
+The plate-alert service will let your device send you a text and make GPIO 20 (BCM numbering) go high when a plate on a custom list is detected. You can use the GPIO output to light an LED, close a relay, or some other type of signaling. To reset the GPIO to low, momentarily connect GPIO 26 to ground. (Such as with a momentary SPST pushbutton)
 
 To set the alert plate list, use the device variable `PLATE_LIST` and set to a comma-delimited list of license plates. Make all letters lower case and do not use any quotes. For example: `abc123,f45ccv,jrf556,705gat,jjk877`
 
