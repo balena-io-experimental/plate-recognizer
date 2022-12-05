@@ -51,7 +51,7 @@ The config.ini file is located at `/user-data/config.ini` and is on a persistent
 
 If all is well, you should start seeing Stream data in the logs section of your balenaCloud dashboard:
 
-[[https://github.com/balena-labs-projects/plate-recognizer/blob/master/images/alpr-log.png|alt=ALPR logs]]
+[[https://github.com/balena-labs-projects/plate-recognizer/blob/main/images/alpr-log.png|alt=ALPR logs]]
 
 ### The plate-alert service
 
