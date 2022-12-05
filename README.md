@@ -12,21 +12,62 @@ For more details, see the accompanying blog post (TBA).
 - An example container is included to show how to consume the Plate Rec API
 - The example container sends a text and closes a GPIO output when a license plate on a custom list is detected
 
-**This repo is not yet complete.**
 
-## Setup and configuration
+## Quick start
 
 Running this project is as simple as deploying it to a balenaCloud application. You can do it in just one click by using the button below:
 
 [![deploy button](https://balena.io/deploy.svg)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/balena-labs-projects/plate-recognizer)
 
+If you don't have one, you'll be prompted to set up a balenaCloud account (the first ten devices are free and full-featured!) then burn the downloaded image to a micro SD card, boot it up, and the ALPR application will download and start running. You will need to add some device variables to get it working - see "setup and confirguration" below.
+
+If you want to make cahnges to the project and push them to your device, you'll need to use the balenaCLI. See the [Getting Started](https://www.balena.io/os/docs/raspberrypi4-64/getting-started/) guide for more information.
+
 ## Supported hardware
 
 This project is developed for Raspberry Pi 4. Other hardware may be compatible, but is untested.
 
-## Documentation
+## Setup and configuration
 
-Head over to our [docs](https://www.balena.io/os/docs/raspberrypi4-64/getting-started/) for detailed installation and usage instructions.
+Plate Recognizer Stream is a paid product - see their pricing page to sign up and obtain a license key and token. One you have these, you can set them on your balenaCloud dashboard as [device variables](https://www.balena.io/docs/learn/manage/variables/):
+`LICENSE_KEY` and `TOKEN` (select the `alpr` service for both.)
+
+The following Stream configuration parameters can be set in a similar way via the balenaCloud dashboard. (See the Stream [configiration page](https://guides.platerecognizer.com/docs/stream/configuration#parameters) for definitions of these parameters)
+
+| Stream parameter  |  Device variable | 
+|---|---|
+|url|`CAMERA1_URL`|
+|regions|`REGIONS`   | 
+|timezone|`TIMEZONE   |
+|mmc|`MMC` |
+|webhook_targets|`WEBHOOK_TARGETS`|
+|webhook_header|`WEBHOOK_HEADER`|
+
+** NOTE: For the above variables to take effect, you must set `USE_VARS` to the value `true` **
+ 
+If you want to use any parameters not listed above, or want to edit the config.ini file manually, amke sure to set `USE_VARS` to false or delete the variable alltogether. If you edit the config.ini file while `USE_VARS` is `true` you will lose any changes to the file.
+
+The config.ini file is located at `/user-data/config.ini` and is on a persistent volume that will survive container restarts.
+
+### The plate-alert service
+
+We have included a service called plate-alert that consumes the Plate Recognizer Stream API on the device. To use it, add `http://plate-alert:5000` to your webhook_targets, either using a device variable or by editing config.ini as described above and in the [Stream documentation](https://guides.platerecognizer.com/docs/stream/configuration)
+
+The plate-alert service will let your device send you a text and close GPIO 20 (BCM numbering) when a plate on a custom list is detected. You can use the GPIO output to light an LED, close a relay, or some other type of signalling. To reset the GPIO to low, momentarily connect GPIO 26 to ground. (Such as with a momentary SPST pushbutton)
+
+To set the alert plate list, use the device variable `PLATE_LIST` and set to a comma-delimited list of license plates. Make all letters lower case and do not use any quotes. For example: `abc123,f45ccv,jrf556,705gat,jjk877`
+
+To receive a text, you'll need to set the following device variables:
+
+| Variable  |  Description | 
+|---|---|
+|url|`CAMERA1_URL`|
+|regions|`REGIONS`   | 
+|timezone|`TIMEZONE   |
+
+
+### Using Park Pow
+Park Pow is a sister product of Plate Recognizer used for parking garage management, and interfaces directly with Stream. Add `https://app.parkpow.com/api/v1/webhook-receiver/` to your webhook_targets (you can add more than one target, separated by a comma) and follow the integration steps [here](https://guides.platerecognizer.com/docs/parkpow/integrations#stream).
 
 ## Getting Help
 
