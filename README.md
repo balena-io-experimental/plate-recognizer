@@ -51,6 +51,8 @@ Here's an example of some device variables in the dashboard:
 
 ![ALPR logs](https://github.com/balena-labs-projects/plate-recognizer/blob/main/images/device-variables.png)
 
+Note that you can set any variables at the fleet level in balenaCloud so they apply to all the devices in your fleet without having to edit each one separately! 
+
 The config.ini file is located at `/user-data/config.ini` and is on a persistent volume that will survive container restarts.
 
 If all is well, you should start seeing Stream data in the logs section of your balenaCloud dashboard:
@@ -75,8 +77,6 @@ To receive a text, you'll need to set up a Twilio account and obtain a Twilio ph
 |`TWILIO_TO`|Number to send text to - must be verified for free trials in Twilio console|
 
 You can use the plate-alert service as a template for building your own interaction with Plate Recognizer.
-
-Note that you can set variables at the fleet level in balenaCloud so they apply to all the devices in your fleet without having to edit each one separately! 
 
 ### Using Park Pow
 Park Pow is a sister product of Plate Recognizer used for parking garage management, and interfaces directly with Stream. Add `https://app.parkpow.com/api/v1/webhook-receiver/` to your webhook_targets (you can add more than one target, separated by a comma) and follow the integration steps [here](https://guides.platerecognizer.com/docs/parkpow/integrations#stream).
