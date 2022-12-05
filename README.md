@@ -49,6 +49,10 @@ If you want to use any parameters not listed above, or want to edit the config.i
 
 The config.ini file is located at `/user-data/config.ini` and is on a persistent volume that will survive container restarts.
 
+If all is well, you should start seeing Stream data in the logs section of your balenaCloud dashboard:
+
+[[/images/alpr-log.png|ALPR log]]
+
 ### The plate-alert service
 
 We have included a service called plate-alert that consumes the Plate Recognizer Stream API on the device. To use it, add `http://plate-alert:5000` to your webhook_targets, either using a device variable or by editing config.ini as described above and in the [Stream documentation](https://guides.platerecognizer.com/docs/stream/configuration)
