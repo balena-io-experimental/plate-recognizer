@@ -32,7 +32,7 @@ This project is developed for Raspberry Pi 4. Other Pi hardware (such as the 3B+
 Plate Recognizer Stream is a paid product - see their pricing page to sign up and obtain a license key and token. One you have these, you can set them on your balenaCloud dashboard as [device variables](https://www.balena.io/docs/learn/manage/variables/):
 `LICENSE_KEY` and `TOKEN` (select the `alpr` service for both.)
 
-The following Stream configuration parameters can be set in a similar way via the balenaCloud dashboard. (See the Stream [configiration page](https://guides.platerecognizer.com/docs/stream/configuration#parameters) for definitions of these parameters)
+The following Stream configuration parameters can be set in a similar way via the balenaCloud dashboard. (See the Stream [configuration page](https://guides.platerecognizer.com/docs/stream/configuration#parameters) for definitions of these parameters)
 
 | Stream parameter  |  Device variable | 
 |---|---|
