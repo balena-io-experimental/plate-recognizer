@@ -38,7 +38,7 @@ The following Stream configuration parameters can be set in a similar way via th
 |---|---|
 |url|`CAMERA1_URL`|
 |regions|`REGIONS`   | 
-|timezone|`TIMEZONE   |
+|timezone|`TIMEZONE`   |
 |mmc|`MMC` |
 |webhook_targets|`WEBHOOK_TARGETS`|
 |webhook_header|`WEBHOOK_HEADER`|
@@ -57,14 +57,14 @@ The plate-alert service will let your device send you a text and close GPIO 20 (
 
 To set the alert plate list, use the device variable `PLATE_LIST` and set to a comma-delimited list of license plates. Make all letters lower case and do not use any quotes. For example: `abc123,f45ccv,jrf556,705gat,jjk877`
 
-To receive a text, you'll need to set the following device variables:
+To receive a text, you'll need to set up a Twilio account and obtain a Twilio phone number. (Free [Twilio trial accounts](https://www.twilio.com/docs/usage/tutorials/how-to-use-your-free-trial-account) are available. Once you have that, set the following device variables:
 
 | Variable  |  Description | 
 |---|---|
-|url|`CAMERA1_URL`|
-|regions|`REGIONS`   | 
-|timezone|`TIMEZONE   |
-
+|`TWILIO_ACCOUNT_SID`|SID from your Twilio console|
+|`TWILIO_AUTH_TOKEN`|Token from your Twilio console   | 
+|`TWILIO_FROM`|Twilio phone number from your Twilio console   |
+|`TWILIO_TO`|Number to send text to - must be verified for free trials in Twilio console|
 
 ### Using Park Pow
 Park Pow is a sister product of Plate Recognizer used for parking garage management, and interfaces directly with Stream. Add `https://app.parkpow.com/api/v1/webhook-receiver/` to your webhook_targets (you can add more than one target, separated by a comma) and follow the integration steps [here](https://guides.platerecognizer.com/docs/parkpow/integrations#stream).
