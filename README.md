@@ -25,7 +25,7 @@ If you want to make cahnges to the project and push them to your device, you'll 
 
 ## Supported hardware
 
-This project is developed for Raspberry Pi 4. Other hardware may be compatible, but is untested.
+This project is developed for Raspberry Pi 4. Other Pi hardware (such as the 3B+) may be compatible, but is untested.
 
 ## Setup and configuration
 
