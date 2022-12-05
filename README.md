@@ -45,7 +45,7 @@ The following Stream configuration parameters can be set in a similar way via th
 
 ** NOTE: For the above variables to take effect, you must set `USE_VARS` to the value `true` **
  
-If you want to use any parameters not listed above, or want to edit the config.ini file manually, amke sure to set `USE_VARS` to false or delete the variable alltogether. If you edit the config.ini file while `USE_VARS` is `true` you will lose any changes to the file.
+If you want to use any parameters not listed above, or want to edit the config.ini file manually, make sure to set `USE_VARS` to false or delete the variable alltogether. If you edit the config.ini file while `USE_VARS` is `true` you will lose any changes to the file.
 
 Here's an example of some device variables in the dashboard:
 
@@ -78,6 +78,8 @@ Note that you can set variables at the fleet level in balenaCloud so they apply 
 
 ### Using Park Pow
 Park Pow is a sister product of Plate Recognizer used for parking garage management, and interfaces directly with Stream. Add `https://app.parkpow.com/api/v1/webhook-receiver/` to your webhook_targets (you can add more than one target, separated by a comma) and follow the integration steps [here](https://guides.platerecognizer.com/docs/parkpow/integrations#stream).
+
+Note that under many general use cases, you can flash the Raspberry Pi 4 and set the configuration via balenaCloud without ever logging into the device itself!
 
 ## Getting Help
 
