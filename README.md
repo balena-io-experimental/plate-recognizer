@@ -2,11 +2,15 @@
 
 [Plate Recognizer](https://platerecognizer.com/) is a suite of software products that provide accurate and fast Automatic License Plate Recognition (ALPR)
 
-This project deploys the Plate Recognizer [Stream](https://platerecognizer.com/stream/) product which processes live camera or video feeds and extracts any detected license plates. We will use webhooks to send that data to [Park Pow](https://parkpow.com/), Plate Recognizer's sister product for managing and enforcing parking. In addition, we'll show how those webhooks can also be used on-device to send a text or close a relay when one or more specific plates are detected.
+This project deploys the Plate Recognizer [Stream](https://platerecognizer.com/stream/) product which processes live camera or video feeds and extracts any detected license plates. This repo uses a Raspberry Pi 4 on the balena platform for ease of deployment, and to make updating and managing a fleet of  ALPR devices from any location simple. (A fleet can be one or more devices!)
 
-We will be using the balena platform on a Raspberry Pi 4 for ease of deployment, and to make updating and managing our ALPR devices simple. (A fleet can be one or more devices!) We'll show how balenaCloud can be used to set Plate Recognizer settings no matter where the device is located, and remove the need to ssh into devices or edit config files.
+For more details, see the accompanying blog post (TBA).
 
-For more details, see the accompanying blog post (TBA) otherwise use the information below to set up your device.
+## Project features
+- Use the balenaCloud dashboard to set some basic Plate Recognizer Stream configurations - no need to ssh or edit config files!
+- Add webhook targets via the dashboard - we show an example using [Park Pow](https://parkpow.com/)
+- An example container is included to show how to consume the Plate Rec API
+- The example container sends a text and closes a GPIO output when a license plate on a custom list is detected
 
 **This repo is not yet complete.**
 
