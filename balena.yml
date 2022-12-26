@@ -15,6 +15,13 @@ assets:
     data:
       url: 'https://github.com/balena-labs-projects/plate-recognizer/main/logo.svg'
 data:
+  applicationEnvironmentVariables:
+    - REGIONS: US
+    - TIMEZONE: EST
+  applicationConfigVariables:
+    - RESIN_HOST_CONFIG_dtparam: '"i2c_arm=on","spi=on","audio=on"'
+    - RESIN_HOST_CONFIG_gpu_mem: 64
+    - RESIN_HOST_CONFIG_disable_splash: 1
   defaultDeviceType: raspberrypi4-64
   supportedDeviceTypes:
     - raspberrypi4-64
