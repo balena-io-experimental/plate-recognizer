@@ -13,7 +13,7 @@ assets:
   logo:
     type: blob.asset
     data:
-      url: 'https://github.com/balena-labs-projects/plate-recognizer/main/logo.png'
+      url: 'https://raw.githubusercontent.com/balena-labs-projects/plate-recognizer/main/logo.png'
 data:
   defaultDeviceType: raspberrypi4-64
   supportedDeviceTypes:
