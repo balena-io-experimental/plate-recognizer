@@ -10,7 +10,7 @@ on:
       - 'docs/**'
 
 env:
-  BALENA_APP: balenaLabs/plate-recognizer
+  BALENA_APP: ky1/plate-recognizer
 
 jobs:
   build:
