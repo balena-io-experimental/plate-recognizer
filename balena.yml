@@ -1,6 +1,6 @@
 name: Plate Recognizer
 description: >-
-  Example of Plate Recognizer on balena for easy deployment.
+  Example of Plate Recognizer on balena for easy deployment and fleet management.
 joinable: false
 # By default post-provisioning is overwritten by the deploy-to-balena GitHub action to match README.md
 post-provisioning: Click 'View code' to see the README.
