@@ -13,15 +13,8 @@ assets:
   logo:
     type: blob.asset
     data:
-      url: 'https://github.com/balena-labs-projects/plate-recognizer/main/logo.svg'
+      url: 'https://github.com/balena-labs-projects/plate-recognizer/main/logo.png'
 data:
-  applicationEnvironmentVariables:
-    - REGIONS: US
-    - TIMEZONE: EST
-  applicationConfigVariables:
-    - RESIN_HOST_CONFIG_dtparam: '"i2c_arm=on","spi=on","audio=on"'
-    - RESIN_HOST_CONFIG_gpu_mem: 128
-    - RESIN_HOST_CONFIG_disable_splash: 0
   defaultDeviceType: raspberrypi4-64
   supportedDeviceTypes:
     - raspberrypi4-64
