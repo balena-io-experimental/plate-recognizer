@@ -6,8 +6,9 @@ WORKDIR /user-data
 
 WORKDIR /app
 
+COPY *.var ./
 COPY *.sh ./
 RUN chmod +x entry.sh
-COPY *.var ./
+
 
 CMD ["bash", "entry.sh"]
